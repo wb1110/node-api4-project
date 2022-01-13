@@ -1,10 +1,17 @@
 const express = require('express');
+const get = require('./users-helpers');
 
 const server = express();
 server.use(express.json());
 
 server.get('/api/users', (req, res) => {
-  res.send('hello users');
+  get()
+    .then((users) => {
+      res.json(users);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 server.post('/api/register', (req, res) => {
