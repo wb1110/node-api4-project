@@ -7,11 +7,11 @@ server.get('/api/users', (req, res) => {
   res.send('hello users');
 });
 
-server.get('/api/register', (req, res) => {
+server.post('/api/register', (req, res) => {
   res.send('hello register');
 });
 
-server.get('/api/login', (req, res) => {
+server.post('/api/login', (req, res) => {
   res.send('hello login');
 });
 
